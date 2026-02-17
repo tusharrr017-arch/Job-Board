@@ -2,6 +2,7 @@ import type { NextAuthConfig } from "next-auth";
 import Github from "next-auth/providers/github";
 
 export const authConfig = {
+  trustHost: true, // Required for Vercel/proxy so auth doesn't throw Configuration error
   session: {
     strategy: "jwt" as const,
   },
