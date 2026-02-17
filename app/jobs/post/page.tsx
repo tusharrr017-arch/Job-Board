@@ -1,11 +1,15 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 export default function JobsPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmitting) return;
 
+    setIsSubmitting(true);
     const formData = new FormData(e.currentTarget);
     const data = {
       title: formData.get("title"),
@@ -25,14 +29,16 @@ export default function JobsPage() {
         const text = await res.text();
         console.error("Post job failed:", res.status, text);
         alert("Failed to post job. Please sign in and try again.");
+        setIsSubmitting(false);
         return;
       }
       window.location.href = "/jobs";
     } catch (err) {
       console.error(err);
       alert("Failed to post job. Please try again.");
+      setIsSubmitting(false);
     }
-}
+  };
     return (
      <div className="max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold text-gray-900 mb-6">Post a Job</h1>
@@ -140,9 +146,10 @@ export default function JobsPage() {
 
         <button
           type="submit"
+          disabled={isSubmitting}
           className="w-full bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Post Job
+          {isSubmitting ? "Posting…" : "Post Job"}
         </button>
       </form>
     </div>
