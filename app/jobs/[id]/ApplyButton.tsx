@@ -9,7 +9,7 @@ export default function ApplyButton({ jobId }: { jobId: string }) {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [applicationStatus, setappplicationStatus] = useState<
+  const [applicationStatus, setApplicationStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
   const handleApply = async () => {
@@ -17,20 +17,22 @@ export default function ApplyButton({ jobId }: { jobId: string }) {
       router.push("/auth/signin");
       return;
     }
-    setappplicationStatus("idle")
+    setApplicationStatus("idle");
     setErrorMessage("");
     try {
       const response = await fetch(`/api/jobs/${jobId}/apply`, {
         method: "POST",
       });
-      setappplicationStatus("success")
-    } catch (err) {
-      if (err instanceof Error) {
-        setErrorMessage(err.message);
-      } else {
-        setErrorMessage("Failed to apply for this job");
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        setErrorMessage((data as { error?: string }).error ?? "Failed to apply for this job");
+        setApplicationStatus("error");
+        return;
       }
-      setappplicationStatus("error")
+      setApplicationStatus("success");
+    } catch {
+      setErrorMessage("Failed to apply for this job");
+      setApplicationStatus("error");
     }
   };
 

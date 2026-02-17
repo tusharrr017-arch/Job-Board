@@ -91,7 +91,7 @@ export default async function JobsPage({
             </div>
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-500">
-                Posted by {job.postedBy.name}
+                Posted by {(job as { postedBy?: { name: string | null } }).postedBy?.name ?? "Unknown"}
               </span>
               <Link
                 href={`/jobs/${job.id}`}

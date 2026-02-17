@@ -21,7 +21,7 @@ export async function POST (request:Request){
         return new NextResponse("Internal Server error",{status:500})
     }
 }
-export async function GET (request:Request){
+export async function GET() {
     try{
         const jobs = await prisma.job.findMany({
             orderBy:{
