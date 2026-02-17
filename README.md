@@ -38,8 +38,6 @@
 
 In this tutorial, you'll learn how to build a modern **Job Board App** using **Next.js**, **Prisma**, **PostgreSQL**, and **TailwindCSS**. You'll cover **real-world database relations, complex queries, and a complete CRUD workflow**, and implement **dynamic search filters** and **user applications**.
 
-🎥 Watch the full tutorial: [YouTube](https://youtu.be/YOUR_VIDEO_ID)
-
 ---
 
 ## ⚙️ Tech Stack
