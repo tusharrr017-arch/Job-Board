@@ -1,26 +1,23 @@
-
-
-````md
 # 🚀 Job Board App — Next.js + Prisma
 
 🔴 **Live Demo:**  
 👉 https://job-board-seven-silk.vercel.app/
 
-A modern full-stack **Job Board application** where users can post jobs, search listings, and apply to positions. Built using **Next.js, Prisma, PostgreSQL, and TailwindCSS**, showcasing real-world CRUD operations, authentication, and dynamic filtering.
+A modern full-stack **Job Board application** where users can post jobs, search listings, and apply to positions. Built using **Next.js, Prisma, PostgreSQL, and TailwindCSS**, demonstrating real-world CRUD operations, authentication, and dynamic filtering.
 
 ---
 
 ## 📌 Project Overview
 
-This application allows:
+This application allows users to:
 
-- Users to post job listings
-- Users to search and browse jobs
-- Users to apply to jobs
-- Dashboard to manage posted jobs & applications
-- Authentication using GitHub login
-- Dynamic job detail pages
-- Advanced job filtering
+- Post job listings
+- Search and browse jobs
+- Apply to job postings
+- Manage jobs and applications via dashboard
+- Authenticate using GitHub login
+- View dynamic job detail pages
+- Use advanced job filtering
 
 The project demonstrates practical full-stack development using Next.js with database integration and authentication.
 
@@ -33,7 +30,7 @@ The project demonstrates practical full-stack development using Next.js with dat
 - **PostgreSQL / Neon DB** — Database
 - **TailwindCSS** — Styling
 - **TypeScript** — Type safety
-- **NextAuth / Auth.js** — Authentication
+- **Auth.js (NextAuth)** — Authentication
 - **Vercel** — Deployment platform
 
 ---
@@ -41,7 +38,7 @@ The project demonstrates practical full-stack development using Next.js with dat
 ## ⚡ Features
 
 ### 📝 Post Jobs
-Authenticated users can create job listings with:
+Authenticated users can create job listings including:
 - Title
 - Company
 - Location
@@ -52,7 +49,7 @@ Authenticated users can create job listings with:
 ---
 
 ### 🔍 Advanced Job Search
-Users can search jobs by:
+Jobs can be filtered by:
 - Keyword
 - Company
 - Location
@@ -63,9 +60,9 @@ Filtering is powered by Prisma queries.
 ---
 
 ### 📄 Job Detail Pages
-Each job has its own dynamic page showing:
-- Job details
-- Company information
+Each job has a dedicated dynamic page displaying:
+- Job information
+- Company details
 - Posting date
 - Apply option
 
@@ -73,9 +70,9 @@ Each job has its own dynamic page showing:
 
 ### 👤 User Dashboard
 Users can:
-- View posted jobs
+- View their posted jobs
 - Track applicants
-- Manage job applications
+- Manage applications
 
 ---
 
@@ -85,7 +82,7 @@ Users can apply to jobs, and applications are linked to both user and job.
 ---
 
 ### 🔐 Authentication
-Users sign in using GitHub before:
+Users must sign in using GitHub before:
 - Posting jobs
 - Applying to jobs
 - Accessing dashboard
@@ -105,7 +102,6 @@ Users sign in using GitHub before:
 ## 🚀 Quick Start (Local Setup)
 
 ### Prerequisites
-
 - Node.js installed
 - PostgreSQL / Neon database
 - GitHub OAuth app
@@ -118,7 +114,7 @@ Users sign in using GitHub before:
 ```bash
 git clone https://github.com/yourusername/job-board.git
 cd job-board
-````
+```
 
 ---
 
@@ -186,35 +182,21 @@ Deployment steps:
 
 Live App:
 
-👉 [https://job-board-seven-silk.vercel.app/](https://job-board-seven-silk.vercel.app/)
+👉 https://job-board-seven-silk.vercel.app/
 
 ---
----
 
-## 🖼️ Screenshots
-<img width="1347" alt="Home" src="https://github.com/user-attachments/assets/dcde382d-f842-4493-af5e-0b956cb89b46" />
-<img width="1243" alt="Dashboard" src="https://github.com/user-attachments/assets/29da6fbc-6b8c-4475-88ad-a9b700461401" />
-
----
 ## 📚 Useful Resources
 
-* Next.js Docs: [https://nextjs.org/docs](https://nextjs.org/docs)
-* Prisma Docs: [https://www.prisma.io/docs](https://www.prisma.io/docs)
-* PostgreSQL Docs: [https://www.postgresql.org/docs/](https://www.postgresql.org/docs/)
-* Tailwind CSS Docs: [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
-* Vercel: [https://vercel.com](https://vercel.com)
+- Next.js Docs — https://nextjs.org/docs
+- Prisma Docs — https://www.prisma.io/docs
+- PostgreSQL Docs — https://www.postgresql.org/docs/
+- Tailwind CSS Docs — https://tailwindcss.com/docs
+- Vercel — https://vercel.com
 
 ---
 
 ## 👨‍💻 Author
 
-**Tushar Lakhani**
-
-GitHub: [https://github.com/tusharrr017-arch](https://github.com/tusharrr017-arch)
-
----
-
-
-
-
-
+**Tushar Lakhani**  
+GitHub: https://github.com/tusharrr017-arch
