@@ -2,7 +2,7 @@ import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export async function POST (request:Request){
+export async function POST(request: Request) {
     const session = await auth()
     if(!session?.user ||  !session.user.id){
         return NextResponse.redirect(new URL("/auth/signin", request.url));
@@ -21,16 +21,17 @@ export async function POST (request:Request){
         return new NextResponse("Internal Server error",{status:500})
     }
 }
+
 export async function GET() {
-    try{
+  try {
         const jobs = await prisma.job.findMany({
             orderBy:{
                 postedAt:"desc"
             }
         });
-        return NextResponse.json(jobs);
-    }catch(err){
-        console.error("Error creating the job : ", err)
-        return new NextResponse("Internal Server error",{status:500})
-    }
+    return NextResponse.json(jobs);
+  } catch (err) {
+    console.error("Error fetching jobs:", err);
+    return new NextResponse("Internal Server error", { status: 500 });
+  }
 }
